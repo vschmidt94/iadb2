@@ -1,0 +1,8 @@
+import graphviz as gv
+
+g = gv.Digraph(format='svg')
+g.layout('circo')
+g.node('Root')
+g.edge('a', 'b', constraint='false')
+...
+

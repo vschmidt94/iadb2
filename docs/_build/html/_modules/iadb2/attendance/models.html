@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>iadb2.attendance.models &mdash; IADB2 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="IADB2 0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> IADB2
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">IADB2 Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_docs/user_index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/developer_index.html">Developer</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IADB2</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>iadb2.attendance.models</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for iadb2.attendance.models</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Models for the Attendance App</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="k">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="k">import</span> <span class="n">timezone</span>
+<span class="kn">from</span> <span class="nn">iadb2.auditors.models</span> <span class="k">import</span> <span class="n">Auditor</span>
+
+<div class="viewcode-block" id="Event"><a class="viewcode-back" href="../../../developer/modules/attendance.html#iadb2.attendance.models.Event">[docs]</a><span class="k">class</span> <span class="nc">Event</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Event</span>
+
+<span class="sd">    Event object will be used to store event/meeting details. This is not intended to be</span>
+<span class="sd">    a replacement for meeting agendas, minutes, or notes that are typically maintained</span>
+<span class="sd">    in Jira, etc.  Just a simple record of a event/meeting occurance so that users can</span>
+<span class="sd">    register their attendance at the meeting.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        date_time (DateTimeField): Event DateTime</span>
+<span class="sd">        event_type (CharField): Two character id that maps to event type choices.</span>
+<span class="sd">        event_desc (CharField): Event Description (optional)</span>
+<span class="sd">        duration_min (PositiveIntegerField): Event duration in minutes</span>
+<span class="sd">        allow_checkin (BooleanField): Allow users to check-in to event?</span>
+<span class="sd">        checkin_window (PositiveIntegerField): Amount of time before the scheduled</span>
+<span class="sd">            start and after the scheduled end of the event to allow users to</span>
+<span class="sd">            check-in.</span>
+<span class="sd">        notes (TextField): Freeform text field used to make any pertinent notes.</span>
+<span class="sd">            Not intended as minutes, agenda, etc. </span>
+<span class="sd">        date_created (DateTimeField): Record creation timestamp.</span>
+<span class="sd">        created_by_userid: UserID that created the record.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">MONTHLY_AUDITOR_TRAINING</span> <span class="o">=</span> <span class="s1">&#39;MO&#39;</span>
+    <span class="n">CANDIDATE_TRAINING</span> <span class="o">=</span> <span class="s1">&#39;CT&#39;</span>
+    <span class="n">QUALITY_AMBASSADOR_MEETING</span> <span class="o">=</span> <span class="s1">&#39;QA&#39;</span>
+    <span class="n">RCACI_MEETING</span> <span class="o">=</span> <span class="s1">&#39;RC&#39;</span>
+    <span class="n">OTHER_EVENT</span> <span class="o">=</span> <span class="s1">&#39;OE&#39;</span>
+    <span class="n">EVENT_CHOICES</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="n">MONTHLY_AUDITOR_TRAINING</span><span class="p">,</span> <span class="s1">&#39;Monthly Auditor Training/Meeting&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">CANDIDATE_TRAINING</span><span class="p">,</span> <span class="s1">&#39;Candidate Training&#39;</span><span class="p">),</span>
+        <span class="c1">#(QUALITY_AMBASSADOR_MEETING, &#39;Quality Ambassador Meeting&#39;),</span>
+        <span class="c1">#(RCACI_MEETING, &#39;RCACI Meeting&#39;),</span>
+        <span class="p">(</span><span class="n">OTHER_EVENT</span><span class="p">,</span> <span class="s1">&#39;Other Event&#39;</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">date_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;Event Date-Time&#39;</span><span class="p">)</span>
+    <span class="n">event_type</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">EVENT_CHOICES</span><span class="p">,</span> 
+                                    <span class="n">default</span><span class="o">=</span><span class="n">MONTHLY_AUDITOR_TRAINING</span><span class="p">)</span>
+    <span class="n">event_desc</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;Event Description&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
+    <span class="n">duration_min</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;Duration (min)&#39;</span><span class="p">,</span>
+                                               <span class="n">blank</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="p">)</span>
+    <span class="n">allow_checkin</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;Allow Check-ins&#39;</span><span class="p">)</span>
+    <span class="n">checkin_window</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;Check-in Window&#39;</span><span class="p">)</span>
+    <span class="n">notes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;Meeting Notes&#39;</span><span class="p">)</span>
+    <span class="n">date_created</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;Date Added to IADB&quot;</span><span class="p">,</span>
+                                        <span class="n">blank</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
+    <span class="n">created_by_userid</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;Created by user&#39;</span><span class="p">,</span> 
+                                         <span class="n">blank</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;Admin&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">event_verbose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">Event</span><span class="o">.</span><span class="n">EVENT_CHOICES</span><span class="p">)[</span><span class="bp">self</span><span class="o">.</span><span class="n">event_type</span><span class="p">]</span>
+    
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;-date_time&#39;</span><span class="p">]</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Events&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">timezone</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">date_time</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">event_verbose</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">id</span></div>
+
+
+<div class="viewcode-block" id="AttendanceRecord"><a class="viewcode-back" href="../../../developer/modules/attendance.html#iadb2.attendance.models.AttendanceRecord">[docs]</a><span class="k">class</span> <span class="nc">AttendanceRecord</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attendance Record Class</span>
+
+<span class="sd">    An attendance record is created for any user checking into a event while the </span>
+<span class="sd">    check-in window is open. (Or manually added by Administrator at any time.)</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        attendee (ForeignKey - Auditor):  Auditor attending the event.</span>
+<span class="sd">        event (ForeignKey - Event): Event that was attended.</span>
+<span class="sd">        created (DateTimeField): Timestamp of check-in.</span>
+<span class="sd">        created_by_userid (CharField): User ID that created the record.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">attendee</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Auditor</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">PROTECT</span><span class="p">)</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Event</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">PROTECT</span><span class="p">)</span>
+    <span class="n">created</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;Record Created&#39;</span><span class="p">)</span>
+    <span class="n">created_by_userid</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;Created by user&#39;</span><span class="p">,</span>
+                                         <span class="n">blank</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
+    
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;-created&#39;</span><span class="p">,</span> <span class="s1">&#39;event&#39;</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">attendee</span><span class="p">))</span></div>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 Vaughan Schmidt
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

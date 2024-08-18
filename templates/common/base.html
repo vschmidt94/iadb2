@@ -1,0 +1,341 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>IADB2</title>
+  <link rel="shortcut icon" type="image/png" href="{% static "favicon.ico" %}" />
+  
+  <!-- Bootstrap core CSS-->
+  <link href="{% static "/vendor/bootstrap/css/bootstrap.css" %}" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="{% static "/vendor/font-awesome/css/font-awesome.css" %}" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="{% static "/vendor/datatables/dataTables.bootstrap4.css" %}" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="{% static "/css/sb-admin.css" %}" rel="stylesheet">
+
+  <style>
+    /* CSS used here will be applied after bootstrap.css */
+
+      .move-left {
+        width: 15px;
+          box-shadow: none;
+        }</style>
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="/dashboard/">IADB2</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="/dashboard/">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reports">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseReports" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">Reports</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseReports">
+            <li>
+              <a href="#">Auditor Audit Count</a>  <!--TODO -->
+            </li>
+            <li>
+              <a href="#">Auditor Assignments</a>
+            </li>
+            <li>
+              <a href="#">Clauses Coverage</a>
+            </li>
+            <li>
+              <a href="#">Delinquency</a>
+            </li>
+            <li>
+              <a href="#">Dept. Audit Count</a>
+            </li>
+            <li>
+              <a href="#">Question Useage</a>
+            </li>
+            <li>
+              <a href="#">Process Coverage</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Auditor Menu">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseAuditorMenu" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text">Auditor Menu</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseAuditorMenu">
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseAuditsSubmenu">Audits</a>
+              <ul class="sidenav-third-level collapse" id="collapseAuditsSubmenu">
+                <li>
+                  <a href="/audits/schedule">Schedule</a>
+                </li>
+                <li>
+                  <a href="#">Work with Audits</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Event Check-in</a>
+            </li>
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#questionsSubmenu">Questions</a>
+              <ul class="sidenav-third-level collapse" id="questionsSubmenu">
+                <li>
+                  <a href="#">Submit New Q's</a>
+                </li>
+                <li>
+                  <a href="#">Review Submitted Q's</a>
+                </li>
+                <li>
+                  <a href="#">Modify Rejected Q's</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inquiry">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseInquiry" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-search"></i>
+            <span class="nav-link-text">Inquiry</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseInquiry">
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseAuditInquiry">Audits</a>
+              <ul class="sidenav-third-level collapse" id="collapseAuditInquiry">
+                <li>
+                  <a href="/audits/">Audits</a>
+                </li>
+                <li>
+                  <a href="/audits/periods/">Audit Periods</a>
+                </li>
+                <li>
+                  <a href="/audits/templates/">Audit Templates</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/people/maint_auditors">Auditors</a>
+            </li>
+            <li>
+              <a href="/attendance/maint_event.html">Events & Attendance</a>
+            </li>
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapsePeopleInquiry">People</a>
+              <ul class="sidenav-third-level collapse" id="collapsePeopleInquiry">
+                <li>
+                  <a href="/people/">People</a>
+                </li>
+                <li>
+                  <a href="/people/departments/">Departments</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/processes/">Processes</a>
+            </li>
+            <li>
+              <a href="/auditors/maint_questions">Questions</a>
+            </li>
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseRequirementInquiry">Requirements</a>
+              <ul class="sidenav-third-level collapse" id="collapseRequirementInquiry">
+                <li>
+                  <a href="/requirements/documents/">Documents</a>
+                </li>
+                <li>
+                  <a href="/requirements/">Requirements</a>
+                </li>
+                <li>
+                  <a href="/requirements/standards">Standards</a>
+                </li>
+                <li>
+                  <a href="/requirements/diagrams">Coverage Diagrams</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Database Admin">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseAdmin" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">Maintenance</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseAdmin">
+            <li>
+              <a href="/attendance/maint_event.html">Events & Attendance</a>
+            </li>
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapsePeopleMaint">People</a>
+              <ul class="sidenav-third-level collapse" id="collapsePeopleMaint">
+                <li>
+                  <a href="/people/">People</a>
+                </li>
+                <li>
+                  <a href="/people/departments/">Departments</a>  
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Super Powers">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseSuperPowers" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-bolt"></i>
+            <span class="nav-link-text">Super Powers</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseSuperPowers">
+            <li>
+              <a href="/admin/"><i class="fa fa-fw fa-database"></i> Database Maintenance</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-fw fa-cog"></i> Rebuild Docs</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Documentation">
+          <a class="nav-link" href="/static/sphinx_docs/html/index.html">
+            <i class="fa fa-fw fa-book"></i>
+            <span class="nav-link-text">Documentation</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Report IADB2 Issues">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-ambulance"></i>
+            <span class="nav-link-text">Support Tickets</span </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-bell"></i>
+            <span class="d-lg-none">Alerts
+              <span class="badge badge-pill badge-warning">6 New</span>
+            </span>
+            <span class="indicator text-warning d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">New Alerts:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-danger">
+                <strong>
+                  <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">View all alerts</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-check-box-o"></i>
+          <span class="font-weight-bold"> {{ page_heading }} </span>
+        </div>
+        </div>
+
+
+      <!-- Start Main Page Content -->
+      {% include 'common/partials/messages.html' %}
+      {% block pageBody %}
+      {% endblock pageBody %}
+      <!-- End Main Page Content -->
+
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+            <small>Copyright © 2020-{% now 'Y' %} Vaughan Schmidt</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+    <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+    <!-- Core plugin JavaScript-->
+      <script src="{% static "vendor/jquery-easing/jquery.easing.min.js" %}"></script>
+    <!-- Page level plugin JavaScript-->
+    {% block pageLevelJS %}{% endblock %}
+    <!-- Custom scripts for all pages-->
+      <script src="{% static "js/sb-admin.min.js" %}"></script>
+    <!-- Custom scripts for this page-->
+    {% block pageLevelCustomScripts %}{% endblock %}
+  </div>
+</body>
+
+</html>

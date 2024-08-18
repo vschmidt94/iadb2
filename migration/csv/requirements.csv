@@ -1,0 +1,142 @@
+requirement,description,coverage_by,starts_branch,comments
+4,Context of Organization,C,TRUE,NONE
+4.1,Understanding the Organization and Its Context,S,FALSE,NONE
+4.2,Understanding the Needs and Expectations of Interested Parties,C,FALSE,NONE
+4.2.a,Understanding the Needs and Expectations of Interested Parties,S,FALSE,NONE
+4.2.b,Understanding the Needs and Expectations of Interested Parties,S,FALSE,NONE
+4.3,Determining the Scope of the Quality Management System,S,FALSE,NONE
+4.3.a,Determining the Scope of the Quality Management System,P,FALSE,"As GMS already established, no need for deep dive"
+4.3.b,Determining the Scope of the Quality Management System,P,FALSE,"As GMS already established, no need for deep dive"
+4.3.c,Determining the Scope of the Quality Management System,P,FALSE,"As GMS already established, no need for deep dive"
+4.4,Quality Management System and Processes,S,FALSE,NONE
+4.4.1,Quality Management System and Processes,P,FALSE,Subclauses a to h basically establish a list of things to consider. Can be covered at this level.
+4.4.1.a,Quality Management System and Processes,P,FALSE,See parent note
+4.4.1.b,Quality Management System and Processes,P,FALSE,See parent note
+4.4.1.c,Quality Management System and Processes,P,FALSE,See parent note
+4.4.1.d,Quality Management System and Processes,P,FALSE,See parent note
+4.4.1.e,Quality Management System and Processes,P,FALSE,See parent note
+4.4.1.f,Quality Management System and Processes,P,FALSE,See parent note
+4.4.1.g,Quality Management System and Processes,P,FALSE,See parent note
+4.4.1.h,Quality Management System and Processes,P,FALSE,See parent note
+4.4.2,Documented Information,C,FALSE,NONE
+4.4.2.a,Maintain Documented Information,S,FALSE,Should be included on every audit
+4.4.2.b,Retain Documented Information,S,FALSE,Should be included on every audit
+5,Leadership,C,TRUE,NONE
+5.1,Leadership and Commitment,S,FALSE,NONE
+5.1.1,Leadership and Commitment - General,P,FALSE,NONE
+5.1.1.a,Leadership and Commitment - General,P,FALSE,NONE
+5.1.1.b,Leadership and Commitment - General,P,FALSE,NONE
+5.1.1.c,Leadership and Commitment - General,P,FALSE,NONE
+5.1.1.d,Leadership and Commitment - General,P,FALSE,NONE
+5.1.1.e,Leadership and Commitment - General,P,FALSE,NONE
+5.1.1.f,Leadership and Commitment - General,P,FALSE,NONE
+5.1.1.g,Leadership and Commitment - General,P,FALSE,NONE
+5.1.1.h,Leadership and Commitment - General,P,FALSE,NONE
+5.1.2,Customer Focus,C,FALSE,NONE
+5.1.2.a,Customer Focus,S,FALSE,NONE
+5.1.2.b,Customer Focus,S,FALSE,NONE
+5.1.2.c,Customer Focus,S,FALSE,NONE
+5.1.2.d,Customer Focus,S,FALSE,NONE
+5.2,Policy,C,FALSE,NONE
+5.2.1,Establish the Quality Policy,C,FALSE,NONE
+5.2.1.a,Establish the Quality Policy,S,FALSE,NONE
+5.2.1.b,Establish the Quality Policy,S,FALSE,NONE
+5.2.1.c,Establish the Quality Policy,S,FALSE,NONE
+5.2.1.d,Establish the Quality Policy,S,FALSE,NONE
+5.2.2,Communicate the Quality Policy,C,FALSE,NONE
+5.2.2.a,Communicate the Quality Policy,S,FALSE,NONE
+5.2.2.b,Communicate the Quality Policy,S,FALSE,NONE
+5.2.2.c,Communicate the Quality Policy,S,FALSE,NONE
+5.3,Organizational Roles and Responsibilities,S,FALSE,5.3 Self-Coverage needed to address shall's related to management representative
+5.3.a,Organizational Roles and Responsibilities,S,FALSE,NONE
+5.3.b,Organizational Roles and Responsibilities,S,FALSE,NONE
+5.3.c,Organizational Roles and Responsibilities,S,FALSE,NONE
+5.3.d,Organizational Roles and Responsibilities,S,FALSE,NONE
+5.3.e,Organizational Roles and Responsibilities,S,,
+6,Planning,C,,
+6.1,Actions to Address Risks and Opportunities,C,,
+6.1.1,Actions to Address Risks and Opportunities,S,,
+6.1.1.a,Actions to Address Risks and Opportunities,P,,
+6.1.1.b,Actions to Address Risks and Opportunities,P,,
+6.1.1.c,Actions to Address Risks and Opportunities,P,,
+6.1.1.d,Actions to Address Risks and Opportunities,P,,
+6.1.2,Actions to Address Risks and Opportunities,C,,
+6.1.2.a,Actions to Address Risks and Opportunities,S,,
+6.1.2.b,Actions to Address Risks and Opportunities,C,,
+6.1.2.b.1,Actions to Address Risks and Opportunities,S,,
+6.1.2.b.2,Actions to Address Risks and Opportunities,S,,
+6.2,Quality Objectives and Planning to Achieve,C,,
+6.2.1,Quality Objectives and Planning to Achieve,C,,
+6.2.1.a,Quality Objectives and Planning to Achieve,S,,
+6.2.1.b,Quality Objectives and Planning to Achieve,S,,
+6.2.1.c,Quality Objectives and Planning to Achieve,S,,
+6.2.1.d,Quality Objectives and Planning to Achieve,S,,
+6.2.1.e,Quality Objectives and Planning to Achieve,S,,
+6.2.1.f,Quality Objectives and Planning to Achieve,S,,
+6.2.1.g,Quality Objectives and Planning to Achieve,S,,
+6.2.2,Quality Objectives and Planning to Achieve,S,,
+6.2.2.a,Quality Objectives and Planning to Achieve,P,,
+6.2.2.b,Quality Objectives and Planning to Achieve,P,,
+6.2.2.c,Quality Objectives and Planning to Achieve,P,,
+6.2.2.d,Quality Objectives and Planning to Achieve,P,,
+6.2.2.e,Quality Objectives and Planning to Achieve,P,,
+6.3,Planning of Changes,C,,
+6.3.a,Planning of Changes,S,,
+6.3.b,Planning of Changes,S,,
+6.3.c,Planning of Changes,S,,
+6.3.d,Planning of Changes,S,,
+7,Support,C,,
+7.1,Resources,C,,
+7.1.1,Resources - General,C,,
+7.1.1.a,Resources - General,S,,
+7.1.1.b,Resources - General,S,,
+7.1.2,Resources - People,S,,
+7.1.3,Resources - Infrastructure,S,,
+7.1.4,Resources - Environment ,S,,
+7.1.5,Monitoring and Measuring Resources,C,,
+7.1.5.1,Monitoring and Measuring - General,S,,
+7.1.5.1.a,Monitoring and Measuring - General,S,,
+7.1.5.1.b,Monitoring and Measuring - General,S,,
+7.1.5.2,Measurement Traceability,S,,
+7.1.5.2.a,Measurement Traceability,S,,
+7.1.5.2.b,Measurement Traceability,S,,
+7.1.5.2.c,Measurement Traceability,S,,
+7.1.6,Organizational Knowledge,S,,
+7.2,Competence,C,,
+7.2.a,Competence,S,,
+7.2.b,Competence,S,,
+7.2.c,Competence,S,,
+7.2.d,Competence,S,,
+7.3,Awareness,C,,
+7.3.a,Awareness,S,,
+7.3.b,Awareness,S,,
+7.3.c,Awareness,S,,
+7.3.d,Awareness,S,,
+7.3.e,Awareness,S,,
+7.3.f,Awareness,S,,
+7.3.g,Awareness,S,,
+7.3.h,Awareness,S,,
+7.4,Communication,C,,
+7.4.a,Communication,S,,
+7.4.b,Communication,S,,
+7.4.c,Communication,S,,
+7.4.d,Communication,S,,
+7.4.e,Communication,S,,
+7.5,Documented Information,S,"Self-coverage to capture shalls at end of 7.5, which are outside child clauses",
+7.5.1,Documented Information - General,C,,
+7.1.5.a,Documented Information - General,S,,
+7.1.5.b,Documented Information - General,S,,
+7.5.2,Documented Information - Creating and Updating,C,,
+7.5.2.a,Documented Information - Creating and Updating,S,,
+7.5.2.b,Documented Information - Creating and Updating,S,,
+7.5.2.c,Documented Information - Creating and Updating,S,,
+7.5.3,Control of Documented Information,C,,
+7.5.3.1,Control of Documented Information,S,,
+7.5.3.1.a,Control of Documented Information,P,,
+7.5.3.1.b,Control of Documented Information,P,,
+7.5.3.2,Control of Documented Information,C,,
+7.5.3.2.a,Control of Documented Information,S,,
+7.5.3.2.b,Control of Documented Information,S,,
+7.5.3.2.c,Control of Documented Information,S,,
+7.5.3.2.d,Control of Documented Information,S,,
+7.5.3.2.e,Control of Documented Information,S,,

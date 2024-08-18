@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IADB2 Introduction &mdash; IADB2 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="IADB2 0.1 documentation" href="index.html"/>
+        <link rel="next" title="User Guide" href="user_docs/user_index.html"/>
+        <link rel="prev" title="Welcome to IADB2’s Documentation!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> IADB2
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">IADB2 Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#infrastructure">Infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rest-api">REST API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disambiguation-iadb2-apps">Disambiguation: IADB2 <cite>Apps</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_docs/user_index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer/developer_index.html">Developer</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IADB2</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>IADB2 Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/intro.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="iadb2-introduction">
+<h1>IADB2 Introduction<a class="headerlink" href="#iadb2-introduction" title="Permalink to this headline">¶</a></h1>
+<p>The Internal Audit Database v2 (IADB2) is a tool developed to assist ACME Co.’s
+Internal Audit proccesses.  At it’s core, IADB2 is used to manage, track, and
+record the activities of auditors and audit teams as they conduct periodic
+audits of ACME Co.’s processes and proceedures.</p>
+<div class="section" id="infrastructure">
+<h2>Infrastructure<a class="headerlink" href="#infrastructure" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>IADB2 is currently implemented as follows:</dt>
+<dd><ul class="first last simple">
+<li>Using Django 2.0 Framework (Python 3)</li>
+<li>PostgreSQL as back-end database<ul>
+<li>Database would be easy change out as Django’s ORM abstracts the data layer.</li>
+</ul>
+</li>
+<li>JQuery in support of theming</li>
+<li>Bootstrap<ul>
+<li>Specifically, theming is provided by the SB-Admin2 theme under the MIT License</li>
+</ul>
+</li>
+<li>Sphinx for this documentation</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="rest-api">
+<h2>REST API<a class="headerlink" href="#rest-api" title="Permalink to this headline">¶</a></h2>
+<p>IADB2 offers <cite>some</cite> REST API functionality to retrieve the data from
+backend datastore without having to utilize the existing interface.
+In theory this should make it easier to extend the overall functionality
+or build really cool things into the front-end. As of this writing,
+there is no known use of this API.  But hey, it’s there.</p>
+</div>
+<div class="section" id="disambiguation-iadb2-apps">
+<h2>Disambiguation: IADB2 <cite>Apps</cite><a class="headerlink" href="#disambiguation-iadb2-apps" title="Permalink to this headline">¶</a></h2>
+<p>New users may notice the word <cite>App</cite> used throughout this documentation is
+used somewhat differently than the common concept of an <cite>App</cite>.</p>
+<p>Django uses the concepts of <cite>Projects</cite> and <cite>Apps</cite>, which are not always
+intuitive.  In these terms, IADB2 is the <cite>Project</cite> - the shell
+which contains a collection of smaller Apps.  A Django <cite>App</cite> is a
+smaller, more granular chunck of functionality.</p>
+<dl class="docutils">
+<dt>The IADB2 <cite>Project</cite> is built from the following <cite>Apps</cite>:</dt>
+<dd><ul class="first last simple">
+<li>Audit <cite>App</cite></li>
+<li>Auditor <cite>App</cite></li>
+<li>Attendance <cite>App</cite></li>
+<li>Dashboard <cite>App</cite></li>
+<li>Question <cite>App</cite></li>
+<li>Requirements <cite>App</cite></li>
+<li>(and possibly other, more esoteric apps not mentioned here)</li>
+</ul>
+</dd>
+</dl>
+<p>In actual use, these details are transparent to the end users. However, the
+apps may be individually mentioned within this documentation - so it is
+useful to have a basic awareness of this details.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="user_docs/user_index.html" class="btn btn-neutral float-right" title="User Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to IADB2’s Documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 Vaughan Schmidt.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

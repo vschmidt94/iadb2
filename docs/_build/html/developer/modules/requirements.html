@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Requirements App &mdash; IADB2 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="IADB2 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Modules" href="modules_index.html"/>
+        <link rel="next" title="REST API" href="../rest_api.html"/>
+        <link rel="prev" title="Questions App" href="questions.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> IADB2
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">IADB2 Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_docs/user_index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../developer_index.html">Developer</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="modules_index.html">Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="attendance.html">Attendance App</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auditors.html">Auditors App</a></li>
+<li class="toctree-l3"><a class="reference internal" href="questions.html">Questions App</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Requirements App</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#module-iadb2.requirements.models">Models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../rest_api.html">REST API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo.html">Developer Backlog</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IADB2</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../developer_index.html">Developer</a> &raquo;</li>
+        
+          <li><a href="modules_index.html">Modules</a> &raquo;</li>
+        
+      <li>Requirements App</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/developer/modules/requirements.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="requirements-app">
+<h1>Requirements App<a class="headerlink" href="#requirements-app" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>The Requirements App provides functionality for:</dt>
+<dd><ul class="first last simple">
+<li>Defining Standards</li>
+<li><dl class="first docutils">
+<dt>Requirements</dt>
+<dd>Note: Requirements was previously known as “clauses” in original IADB Access
+Database. IADB2 abstracts this concept slightly to “requirements” as the
+design should support Standards other than AS9100, in which case the
+organization may be different, etc.</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="module-iadb2.requirements.models">
+<span id="models"></span><h2>Models<a class="headerlink" href="#module-iadb2.requirements.models" title="Permalink to this headline">¶</a></h2>
+<p>Requirements Models</p>
+<p>Requirements app will encapsulate the modeling needed to
+define standards and clauses.</p>
+<dl class="class">
+<dt id="iadb2.requirements.models.Requirement">
+<em class="property">class </em><code class="descclassname">iadb2.requirements.models.</code><code class="descname">Requirement</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/iadb2/requirements/models.html#Requirement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#iadb2.requirements.models.Requirement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Requirement Class</p>
+<p>Requirements are defined by Standards. They may also be called ‘Clauses’.</p>
+<dl class="attribute">
+<dt id="iadb2.requirements.models.Requirement.standard">
+<code class="descname">standard</code><a class="headerlink" href="#iadb2.requirements.models.Requirement.standard" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ForeignKey</em> – Standard the Requirement originates from</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="iadb2.requirements.models.Requirement.identifier">
+<code class="descname">identifier</code><a class="headerlink" href="#iadb2.requirements.models.Requirement.identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CharField</em> – Identifier for the Requirement</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="iadb2.requirements.models.Requirement.description">
+<code class="descname">description</code><a class="headerlink" href="#iadb2.requirements.models.Requirement.description" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CharField</em> – Short description of the Requirement</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="iadb2.requirements.models.Requirement.note">
+<code class="descname">note</code><a class="headerlink" href="#iadb2.requirements.models.Requirement.note" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>TextField</em> – Additional internal notes, commentary, etc.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="iadb2.requirements.models.Requirement.coverage_by">
+<code class="descname">coverage_by</code><a class="headerlink" href="#iadb2.requirements.models.Requirement.coverage_by" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CharField</em> – Two character id that maps to list of how/where coverage is obtained.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="iadb2.requirements.models.Requirement.parent">
+<code class="descname">parent</code><a class="headerlink" href="#iadb2.requirements.models.Requirement.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>(ForeignKey): Points to Parent Requirement</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="iadb2.requirements.models.Requirement.is_active">
+<code class="descname">is_active</code><a class="headerlink" href="#iadb2.requirements.models.Requirement.is_active" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>BooleanField</em> – Flag if this requirement is active or not. Inactive requirements
+will not be considered in coverage metrics.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="iadb2.requirements.models.Requirement.date_created">
+<code class="descname">date_created</code><a class="headerlink" href="#iadb2.requirements.models.Requirement.date_created" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>DateTimeField</em> – Record creation timestamp.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="iadb2.requirements.models.Requirement.created_by_userid">
+<code class="descname">created_by_userid</code><a class="headerlink" href="#iadb2.requirements.models.Requirement.created_by_userid" title="Permalink to this definition">¶</a></dt>
+<dd><p>UserID that created the record.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="iadb2.requirements.models.Standard">
+<em class="property">class </em><code class="descclassname">iadb2.requirements.models.</code><code class="descname">Standard</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/iadb2/requirements/models.html#Standard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#iadb2.requirements.models.Standard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard Class</p>
+<p>Defines what standards are being audited to. For example:</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../rest_api.html" class="btn btn-neutral float-right" title="REST API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="questions.html" class="btn btn-neutral" title="Questions App" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 Vaughan Schmidt
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

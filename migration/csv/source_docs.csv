@@ -1,0 +1,51 @@
+Tier,Doc Num,Description,Subclass,Lifecycle Phase
+SOP-001,Employee Handbook,Management Review,Procedure/Forms,Active
+SOP-002,Tool Calibration Procedure,Document Control,Procedure/Forms,Active
+SOP-003,Emergency Evacuation Protocol,Purchasing,Procedure/Forms,Active
+SOP-004,Information Security Policy,Product Identification and Traceability,Procedure/Forms,Active
+SOP-005,Workplace Harassment Prevention,Process Control,Procedure/Forms,Active
+SOP-006,Time and Attendance Tracking,Calibration of Inspection Measurement and Test Equipment (IMTE),Procedure/Forms,Active
+SOP-007,Business Travel Guidelines,Non-Conforming Material,Procedure/Forms,Active
+SOP-008,Social Media Usage Policy,Root Cause Analysis and Continuous Improvement,Procedure/Forms,Active
+SOP-009,Equipment Maintenance Schedule,"Handling, Storage, Packaging, Preservation, and Delivery",Procedure/Forms,Active
+SOP-010,Customer Complaint Resolution,Partner Development and Strategic Opportunities Procedure,Procedure/Forms,Active
+SOP-011,Inventory Management Process,Internal Auditing,Procedure/Forms,Active
+SOP-012,Vendor Selection and Evaluation,Training,Procedure/Forms,Active
+SOP-013,Environmental Sustainability Practices,Servicing,Procedure/Forms,Active
+SOP-014,Quality Control Inspection,Statistical Tools for Design Robustness and Quality Improvement,Procedure/Forms,Active
+SOP-015,New Employee Onboarding,Product Integrity,Procedure/Forms,Active
+SOP-016,Conflict of Interest Disclosure,Product Development and Release,Procedure/Forms,Active
+SOP-017,Data Backup and Recovery,Customer Feedback,Procedure/Forms,Active/
+SOP-018,Remote Work Policy,Return Product Processing,Procedure/Forms,Active
+SOP-019,Employee Performance Review,Supplier Approval and Rating,Procedure/Forms,Active
+SOP-020,Workplace Safety Guidelines,Cost Maintenance Procedure,Procedure/Forms,Active
+SOP-021,Intellectual Property Protection,Production Planning,Procedure/Forms,Active
+SOP-022,Corporate Communications Strategy,Service Document Publication and Distribution,Procedure/Forms,Active
+SOP-023,Expense Reimbursement Procedure,ACME CO CRS Manual / Quality Control Manual,Procedure/Forms,Active
+SOP-024,Product Development Lifecycle,Generic Chemicals Compliance Process,Procedure/Forms,Active
+SOP-025,Crisis Management Plan,ODA Procedures Manual,Procedure/Forms,Active
+SOP-026,Document Retention and Destruction,Significant Environmental Aspects,Procedure/Forms,Active
+SOP-027,Ethical Sourcing Guidelines,EMS Internal & External Communications,Procedure/Forms,Active
+SOP-028,Customer Data Privacy Protection,"EMS Legal, Regulatory and Other Requirements",Procedure/Forms,Active
+SOP-029,Employee Training and Development,"Order Scheduling, Rescheduling, and Lead Times",Procedure/Forms,Active
+SOP-030,Facility Access Control,EMS Monitoring and Measurement,Procedure/Forms,Active
+SOP-031,Internal Audit Procedure,Import Compliance Manual,Procedure/Forms,Active
+SOP-032,Project Management Methodology,Export Compliance Manual,Procedure/Forms,Active
+SOP-033,Whistleblower Protection Policy,Supply Chain Security Manual,Procedure/Forms,Active
+SOP-034,Cyber Incident Response Plan,ACME CO Part Numbering System,Procedure/Forms,Active
+SOP-035,Corporate Philanthropy Guidelines,ACME CO Engineering Specification Requirements,Procedure/Forms,Active
+SOP-036,Diversity and Inclusion Initiatives,"Engineering Specification Release, Change (ECO), and Archive",Procedure/Forms,Active
+SOP-037,Change Management Process,Consumer Software Product Development and Release,Procedure/Forms,Active
+SOP-038,Asset Disposal Procedure,Process Change Notice Procedure,Procedure/Forms,Active
+SOP-039,Software Licensing Compliance,Mechanical Engineering CAD Storage and Archive Requirements,Procedure/Forms,Active
+SOP-040,Employee Wellness Program,Aviation Standard for Air Data SSEC Designs,Procedure/Forms,Active
+SOP-041,Risk Assessment and Mitigation,Management of Export Controlled Technology under the Export Administration Regulations (EAR),Procedure/Forms,Active
+SOP-042,External Communication Guidelines,Product Serial Number Range Assignment,Procedure/Forms,Active
+SOP-043,Supply Chain Management,ACME CO Legacy Part Numbering System,Procedure/Forms,Active
+SOP-044,Employee Grievance Procedure,ECO Authorized Additional Reviewers,Procedure/Forms,Active
+SOP-045,Business Continuity Planning,ECO Additional Review Codes,Procedure/Forms,Active
+SOP-046,Innovation and Ideation Process,Management of Export Controlled Technical Data under the International Traffic in Arms Regulations (ITAR),Procedure/Forms,Active
+SOP-047,Corporate Governance Standards,Cartography Release Procedure,Procedure/Forms,Active
+SOP-048,Health and Safety Compliance,Cartography Quality Assurance Procedure,Procedure/Forms,Active
+SOP-049,Mergers and Acquisitions Protocol,Cartography Problem Reporting Procedure,Procedure/Forms,Active
+SOP-050,Sustainability Reporting Guidelines,Cartography Configuration Management,Procedure/Forms,Active

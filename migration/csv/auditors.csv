@@ -1,0 +1,26 @@
+first_name,last_name,date_qualified,completed_count,is_active,is_loto_qualified,is_admin,is_super_admin,is_auditor,is_qualifying,is_qa,is_support,is_dept_auditor,is_q_approver,iadb1_auditor_id
+Smith, John,2/1/2017,5,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,74
+Johnson, Emily,5/6/2006,100,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,16
+Garcia, Miguel,,,FALSE,,,,,,,,,,1
+Chen, Wei,,,FALSE,,,,,,,,,,2
+Patel, Priya,,,FALSE,,,,,,,,,,3
+Brown, Sarah,,,FALSE,,,,,,,,,,4
+Nguyen, Tuan,,,FALSE,,,,,,,,,,5
+Taylor, Olivia,,,FALSE,,,,,,,,,,6
+Rodriguez, Carlos,,,FALSE,,,,,,,,,,7
+Lee, Soo-Jin,,,FALSE,,,,,,,,,,8
+Anderson, Michael,,,TRUE,,,,,,,,,,9
+Müller, Hannah,,,FALSE,,,,,,,,,,10
+Wilson, David,,,FALSE,,,,,,,,,,11
+Murphy, Siobhan,,,FALSE,,,,,,,,,,12
+Kim, Ji-hoon,,,FALSE,,,,,,,,,,13
+Davis, Rachel,,,FALSE,,,,,,,,,,14
+Martinez, Sofia,,,TRUE,,,,,,,,,,15
+Williams, James,,,TRUE,,,,,,,,,,17
+Dubois, Amélie,,,FALSE,,,,,,,,,,18
+Thompson, Elizabeth,,,FALSE,,,,,,,,,,19
+Singh, Raj,,,TRUE,,,,,,,,,,20
+Suzuki, Hideo,,,FALSE,,,,,,,,,,21
+Jackson, Ethan,,,FALSE,,,,,,,,,,22
+O'Connor, Liam,,,FALSE,,,,,,,,,,23
+Zhang, Meiko,,,FALSE,,,,,,,,,,24

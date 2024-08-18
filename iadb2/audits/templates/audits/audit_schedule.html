@@ -1,0 +1,35 @@
+{% extends "common/base.html" %}
+{% load staticfiles %}
+{% load common_tags %}
+
+
+{% block pageBody %}
+
+<!-- The collapsable card section with About & field help -->
+{% include 'common/partials/section_about_field_help.html' %}
+
+<!-- BEGIN Schedule Audit Button -->
+<div style="margin-top:15px">
+    <p>
+        <a class="btn btn-outline-primary" data-toggle="modal" data-target="#addRecordModal">Add Audit to Schedule</a>
+    </p>
+</div>
+<!-- END Schedule Audit Button -->
+
+<!-- BEGIN Scheduled Audit table -->
+{% include 'common/partials/section_generic_list_table.html' %}
+
+<!-- Modal for scheduling audit -->
+{% include 'audits/partials/schedule_audit_modal.html' %}
+<!-- END Add Modal -->
+
+{% endblock pageBody %}
+
+{% block pageLevelJS %}
+<script src="{% static "vendor/datatables/jquery.dataTables.js" %}"></script>
+<script src="{% static "vendor/datatables/dataTables.bootstrap4.js" %}"></script>
+{% endblock pageLevelJS %}
+
+{% block pageLevelCustomScripts %}
+<script src="{% static "js/sb-admin-datatables.min.js" %}"></script>
+{% endblock pageLevelCustomScripts %}

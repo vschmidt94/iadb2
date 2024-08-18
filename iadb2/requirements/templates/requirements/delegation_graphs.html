@@ -1,0 +1,71 @@
+{% extends "common/base.html" %}
+{% load staticfiles %}
+
+
+{% block pageBody %}
+<div>
+    <p>NOTE: This page may be slow to load as the graphs are re-created each time based on the current state
+        of the requirements in the database.
+    </p>
+</div>
+<!-- BEGIN Card with general info about Standards -->
+<div id="accordion" role="tablist">
+    <div class="card">
+        <div class="card-header" role="tab" id="about">
+            <h6 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" href="#collapseAbout" role="button" aria-expanded="false" aria-controls="collapseAbout">
+                    About
+                </a>
+                </h5>
+        </div>
+
+        <div id="collapseAbout" class="collapse" role="tabpanel" aria-labelledby="about" data-parent="accordion">
+            <div class="card-body">
+                <p> Coverage delegation graphs are visualizations showing how the various clauses either require coverage or 
+                'delegate' coverage to either a parent or child node. Nodes highlighted yellow are nodes that have been
+                specified to require coverage.</p>
+                <p>These graphs were developed as a sanity check the requirements have been properly loaded.</p>
+                <p>
+                <img id="graph_img" class="profile" src="{{MEDIA_URL}}{{acme_logo.png}}"
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+<!-- END Card Information -->
+
+<!-- START Delegation Graph Div -->
+<div style="margin-top:5px">
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> Requirement Delegation Graphs
+        </div>
+        <div class="card-body">
+            <div class="dropdown">
+                <select class="custom-select" onchange="$('#imgToChange').attr('src',
+                    this.options[this.selectedIndex].value);">
+                    <option value="{{MEDIA_URL}}ACME Co._logo.jpg" selected>Select Graph</option>
+                    {% for f in file_list %}
+                    <option value="{{MEDIA_URL}}{{f.1}}">{{f.0}}</option>
+                    {% endfor %}
+                </select>
+                <p>
+                <div class="text-center"> 
+                <img id="imgToChange" class="img-fluid" src="{{MEDIA_URL}}ACME Co._logo.jpg" />
+                </div>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Delegation Graph Div -->
+
+{% endblock pageBody %}
+
+{% block pageLevelJS %}
+{% endblock pageLevelJS %}
+
+
+{% block pageLevelCustomScripts %}
+{% endblock pageLevelCustomScripts %}

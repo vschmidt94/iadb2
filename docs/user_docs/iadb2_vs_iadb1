@@ -1,0 +1,110 @@
+Differences from IADB1
+======================
+
+IADB2 was developed with the goal of capturing the desired functionality  from
+the original Access-based IADB application, while reworking some of the 
+actual implementation.
+
+This is a (non-comprehensive) list of things to be aware of when moving from 
+IADB1 to IADB2.
+
+`VS Note: I'm mainly keeping this list updated to remind myself of (1)what I was
+thinking when I made a substantial change, and (2)things I should point out to
+everyone else at some point.`
+
+Audit Questions cloned from Question Pool
+-----------------------------------------
+Previously, all audits had references to questions that lived in the question pool, 
+and only stored the objective evidence and notes on a per-audit basis. This meant
+that once a question was used on an audit, it could never be deleted or modified. 
+So question pool was hard to manage.
+
+Now, the question pool constains "Master Questions". When a Master Question is 
+selected for an audit, the master question is cloned to the audit and becomes
+part of the permanant audit record.
+
+Until the audit is closed, this question clone can be modified or deleted local 
+to the audit itself. Any change to clone question does not affect the master
+question in the question pool.
+
+This also means the question pool question can be modified or deleted without
+affecting questions used on previous audits.
+
+Added Auditor Notes to Master Questions
+---------------------------------------
+(a.k.a. - "Dear Future Me,")
+
+Master questions now have a `auditor notes` field that can be used to pass along more 
+details about the question such as:
+
+ * "Possible follow-ups: blah..."
+ * "Look for answer that addresses a, b, c, d sub-clauses in standard"
+ * "Need to address this one to team leaders or management"
+ * etc
+
+ When a master question is cloned from the pool to the audit, the auditor notes are 
+ cloned with it - and can be kept, removed, or changed at the audit level without 
+ change to the master version.
+
+Ability to have alternate verions of questions
+----------------------------------------------
+Previously, there was no way of identifying one question existed as an alternate
+to another question. (example: one version of a question made for managers, and
+another version worded for associates).
+
+Now, there is a way to spawn and track versions of the same 'base' question.
+
+
+Added Notes to Master Audit
+---------------------------
+Similar to Master Question Auditor Notes - the Master Audit records now have field
+for Auditor Notes. The intent of this field is to pass along information to future
+auditors that might be useful.
+
+For example:
+ * "If you open with `tell me about the GMS and how it is developed and used?`,
+   you will probably get the answers to most of the formal audit questions without
+   B
+   having to ask each question individually.
+
+Training Flag
+-------------
+IADB2 implements a "Training Flag" on different objects. The purpose of the flag
+is to flag an object as it was created as a training exercise and can be (should
+be) deleted without worry in the future.
+
+**NOTE:** All new objects (Questions, Audits, etc.) created by canditate auditors
+default to have this is_training = TRUE (box is checked).  If the object should
+become permanent, the flag can be toggled to FALSE (un-check the box). The 
+behavior for qualified auditors and other users is reversed.
+
+Processes are NOT mapped to Standards
+-------------------------------------
+Previously, there was a connection in the Access database between a Acme Co.
+Process and a Standard.
+
+Now, that relationship does not exist.
+
+It seems to create a lot of unneccessary dependencies. At the end of the day,
+the Acme Co. Processes are independent of whatever Standard we follow.  The
+_contents_ of our processes may be developed around the requirements of a Standard,
+because they are correlated.  Correlation should not imply causation.
+
+Requirements (Clauses) can delegate coverage
+--------------------------------------------
+Requirements now can carry an indication of how we envision coverage being 
+obtained.  
+
+For example, we know many clauses have lists of sub-clauses (.a, .b, .c, etc)
+that - while technically a requirement - are often a list of thing that 
+"shall be considered" or something along those lines.  If we did questions for
+these individually, the audit suddenly becomes cumbersome and over-loaded.
+
+Likewise, there are cases where the sub-clauses really need to be the question.
+
+IADB2 adds a way to indicate "delegate" the coverage of any clause to either it's
+parent or children.  
+
+More than anything, this provides some record that we've looked at any requirement
+that might exist and purposefully shifted the coverage requirement upstream or 
+downstream.

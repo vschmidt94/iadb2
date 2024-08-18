@@ -1,0 +1,41 @@
+Developer Scratchpad
+====================
+
+TODO's 
+------
+Things I'm pretty sure need to happen / the work backlog
+
+* Employee class
+  Then modify Auditor class.  All auditors are employees, so pull userid, email from there
+* Extend admin interface to app-specific versions.
+  Go ready danjo docs on this and then look for examples in other books.
+* Why is Sphinx CSS not working now?
+
+
+Nice-to-have TODO's
+-------------------
+Not show-stoppers
+
+* Need to figure out how to get code todo's hooked up in sphinx!
+* Sphinx code highlighting is bad - can't seem to over-ride
+
+Ideas
+-----
+My informal thoughts, ideas, suggestions, etc. for this project.  
+
+* Implement in-app ticket system to replace this and be more useful for users to report
+  issues. Django-helpdesk could be option once it supports Django 2
+* Document substantial differences between iadb1 vs iadb2
+  * Requirements vs Clauses and idea that coverage can trace to children, be covered by
+    parent.
+* Special Focus requirement. See end of 5.3 - how to handle?
+* IS_TRAINING flag on things that can be used for training and should be cleaned up
+* Store questions with audit, then parent can always be changed
+
+
+Parent-child relationship for models:
+[200~https://stackoverflow.com/questions/15486520/making-a-tree-structure-in-django-models
+May be useful in requirements
+
+Requirement coverage choices: Self, Parent, Child, N/A ?  (and maybe Special)
+
